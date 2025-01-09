@@ -1,6 +1,6 @@
 ---
 - name: Check updates on a Windows machine
-  hosts: windows
+  hosts: nirbhay
   tasks:
     - name: Check for available updates
       win_updates:
