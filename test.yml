@@ -5,9 +5,3 @@
   tasks:
     - name: Update the apt package index
       command: apt-get update
-      register: apt_update_result
-
-    - name: Display the number of packages available for upgrade
-      debug:
-        msg: >
-          "{{ apt_update_result.upgradeable_packages }} packages are available for upgrade."
