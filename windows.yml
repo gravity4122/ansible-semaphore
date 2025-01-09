@@ -1,0 +1,16 @@
+---
+- name: Check updates on a Windows machine
+  hosts: windows
+  tasks:
+    - name: Check for available updates
+      win_updates:
+        category_names: 
+          - SecurityUpdates
+          - CriticalUpdates
+        state: searched
+      register: windows_updates_result
+
+    - name: Display the number of available updates
+      debug:
+        msg: >
+          "There are {{ windows_updates_result.updates | length }} updates available."
